@@ -26,7 +26,7 @@ public class Customer {
 		Enumeration<Rental> rentals = this.rentals.elements();
 		String result = "Rental Record for " + getName() + "\n";
 		
-		// １行ごとに金額を計算
+		
 		while (rentals.hasMoreElements()) {
 			double thisAmount = 0;
 			Rental each = rentals.nextElement();
@@ -36,8 +36,8 @@ public class Customer {
 				thisAmount += 2;
 				if (each.getDaysRented() > 2) {
 					thisAmount += (each.getDaysRented() - 2) * 1.5;
-					break;
 				}
+				break;
 			case Movie.NEW_RELEASE:
 				thisAmount += each.getDaysRented() * 3;
 				break;
@@ -46,10 +46,9 @@ public class Customer {
 				if (each.getDaysRented() > 3) {
 					thisAmount += (each.getDaysRented() - 3) * 1.5;
 				}
+				break;
 			}
-			// レンタルポイントを加算
 			frequentRentarPoints++;
-			// 新作を２日以上借りた場合はボーナスポイント
 			if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE && each.getDaysRented() > 1) {
 				frequentRentarPoints++;
 			}
@@ -57,7 +56,7 @@ public class Customer {
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
 			totalAmount += thisAmount;
 		}
-		// フッタ部分の追加
+
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
 		result += "You earned " + String.valueOf(frequentRentarPoints) + " freqent renter points";
 		return result;

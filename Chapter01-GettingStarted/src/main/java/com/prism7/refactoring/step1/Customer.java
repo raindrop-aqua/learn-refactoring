@@ -36,8 +36,8 @@ public class Customer {
 				thisAmount += 2;
 				if (each.getDaysRented() > 2) {
 					thisAmount += (each.getDaysRented() - 2) * 1.5;
-					break;
 				}
+				break;
 			case Movie.NEW_RELEASE:
 				thisAmount += each.getDaysRented() * 3;
 				break;
@@ -46,6 +46,7 @@ public class Customer {
 				if (each.getDaysRented() > 3) {
 					thisAmount += (each.getDaysRented() - 3) * 1.5;
 				}
+				break;
 			}
 			// レンタルポイントを加算
 			frequentRentarPoints++;
