@@ -19,3 +19,8 @@ target/
 /Servers
 /.metadata
 /RemoteSystemsTempFiles
+
+#################
+## astah
+#################
+*.asta.lock
