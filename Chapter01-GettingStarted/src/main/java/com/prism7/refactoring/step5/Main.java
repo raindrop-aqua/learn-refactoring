@@ -9,7 +9,7 @@ public class Main {
 			Rental r = new Rental(m, 5);
 			c.addRental(r);
 		}
-		System.out.println(c.statement());
+		System.out.println(c.htmlStatement());
 		
 	}
 
