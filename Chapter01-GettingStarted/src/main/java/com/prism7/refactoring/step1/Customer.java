@@ -26,7 +26,7 @@ public class Customer {
 		Enumeration<Rental> rentals = this.rentals.elements();
 		String result = "Rental Record for " + getName() + "\n";
 		
-		// ‚Ps‚²‚Æ‚É‹àŠz‚ğŒvZ
+		// ï¼‘è¡Œã”ã¨ã«é‡‘é¡ã‚’è¨ˆç®—
 		while (rentals.hasMoreElements()) {
 			double thisAmount = 0;
 			Rental each = rentals.nextElement();
@@ -47,9 +47,9 @@ public class Customer {
 					thisAmount += (each.getDaysRented() - 3) * 1.5;
 				}
 			}
-			// ƒŒƒ“ƒ^ƒ‹ƒ|ƒCƒ“ƒg‚ğ‰ÁZ
+			// ãƒ¬ãƒ³ã‚¿ãƒ«ãƒã‚¤ãƒ³ãƒˆã‚’åŠ ç®—
 			frequentRentarPoints++;
-			// Vì‚ğ‚Q“úˆÈãØ‚è‚½ê‡‚Íƒ{[ƒiƒXƒ|ƒCƒ“ƒg
+			// æ–°ä½œã‚’ï¼’æ—¥ä»¥ä¸Šå€Ÿã‚ŠãŸå ´åˆã¯ãƒœãƒ¼ãƒŠã‚¹ãƒã‚¤ãƒ³ãƒˆ
 			if (each.getMovie().getPriceCode() == Movie.NEW_RELEASE && each.getDaysRented() > 1) {
 				frequentRentarPoints++;
 			}
@@ -57,7 +57,7 @@ public class Customer {
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
 			totalAmount += thisAmount;
 		}
-		// ƒtƒbƒ^•”•ª‚Ì’Ç‰Á
+		// ãƒ•ãƒƒã‚¿éƒ¨åˆ†ã®è¿½åŠ 
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
 		result += "You earned " + String.valueOf(frequentRentarPoints) + " freqent renter points";
 		return result;
